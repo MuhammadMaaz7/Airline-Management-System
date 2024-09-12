@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" prefHeight="500" prefWidth="800" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managerControllers.UpdateFlightController">
+    <top>
+        <VBox>
+            <MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>   
+            <Menu text="MainPage">
+               <items>
+                  <MenuItem fx:id="menuItemGoToMainPage" text="Go to Main Page" />
+                  <MenuItem fx:id="menuItemGoToManagerHomeScreen" text="Go to Manager Home Screen" />
+               </items>
+            </Menu>
+            <Menu text="Manager">
+               <items>
+                  <MenuItem fx:id="menuItemAddNewFlight" text="Add New Flight" />
+                  <MenuItem fx:id="menuItemUpdateFlightSchedule" text="Update Flight Schedule" />
+                  <MenuItem fx:id="menuItemCancelFlight" text="Cancel Flight" />
+                  <MenuItem fx:id="menuItemViewPassengerList" text="View Passenger List" />
+                  <MenuItem fx:id="menuItemAddPassenger" text="Add Passenger" />
+                  <MenuItem fx:id="menuItemRemovePassenger" text="Remove Passenger" />
+                  <MenuItem fx:id="menuItemViewEmployeeList" text="View Crew Members" />
+                  <MenuItem fx:id="menuItemAddEmployee" text="Add Crew Member" />
+                  <MenuItem fx:id="menuItemRemoveEmployee" text="Remove Crew Member" />
+                  <MenuItem fx:id="menuItemManageCrewSchedules" text="Manage Crew Schedules" />
+                  <MenuItem fx:id="menuItemSearchReservation" text="Search Reservation" />
+                  <MenuItem fx:id="menuItemModifyReservationDetails" text="Modify Reservation Details" />
+                  <MenuItem fx:id="menuItemAccessInFlightServices" text="Access In-flight Services" />
+                  <MenuItem fx:id="menuItemAddMaintenanceSchedule" text="Add Maintenance Schedule" />
+                  <MenuItem fx:id="menuItemUpdateBaggageLimit" text="Update Baggage Limit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+         <Label alignment="CENTER" prefHeight="37.0" prefWidth="800.0" text="UPDATE FLIGHT SCHEDULE">
+            <font>
+               <Font name="Arial Bold" size="20.0" />
+            </font>
+         </Label>
+        </VBox>
+    </top>
+    <center>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="439.0" prefWidth="584.0" />
+                <VBox prefHeight="439.0" prefWidth="715.0">
+                    <children>
+                        <HBox prefHeight="45.0" prefWidth="355.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="31.0" prefWidth="355.0" text="Enter Updated Details">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </Label>
+                     </children></HBox>
+                        <HBox prefHeight="50.0" prefWidth="355.0">
+                            <children>
+                                <Label text="Departure City:       ">
+                                    <font>
+                                        <Font name="Calibri Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="departureCityComboBox" prefWidth="150.0" />
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="50.0" prefWidth="355.0">
+                            <children>
+                                <Label text="Arrival City:             ">
+                                    <font>
+                                        <Font name="Calibri Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="arrivalCityComboBox" prefWidth="150.0" />
+                            </children>
+                        </HBox>
+                  <HBox prefHeight="43.0" prefWidth="355.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="126.0" text="Flight Status:">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="FlightStatusComboBox" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                        <HBox prefHeight="50.0" prefWidth="355.0">
+                            <children>
+                                <Label prefHeight="18.0" prefWidth="126.0" text="Departure Date:">
+                                    <font>
+                                        <Font name="Calibri Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <DatePicker fx:id="departureDatePicker" prefHeight="26.0" prefWidth="155.0" />
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="50.0" prefWidth="355.0">
+                            <children>
+                                <Label prefHeight="18.0" prefWidth="126.0" text="Departure Time:">
+                                    <font>
+                                        <Font name="Calibri Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Spinner fx:id="departureTimeSpinnerHrs" prefHeight="26.0" prefWidth="69.0" />
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="50.0" text="Hrs">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="departureTimeSpinnerMins" prefHeight="26.0" prefWidth="69.0" />
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="50.0" text="Mins">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                        </Label>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="50.0" prefWidth="355.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="126.0" text="Flight Duration:">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="flightdurationHrs" prefHeight="26.0" prefWidth="69.0" />
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="50.0" text="Hrs">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="flightdurationMins" prefHeight="26.0" prefWidth="69.0" />
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="50.0" text="Mins">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children></HBox>
+                  <HBox prefHeight="50.0" prefWidth="355.0" />
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="98.0" prefWidth="90.0">
+                           <children>
+                                        <Button fx:id="UpdateFlightButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="117.0" text="Update Flight" />
+                           </children></VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox prefHeight="439.0" prefWidth="582.0" />
+            </children>
+        </HBox>
+    </center>
+</BorderPane>

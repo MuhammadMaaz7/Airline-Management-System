@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="rootPane" prefHeight="500" prefWidth="800" style="-fx-background-color: #f4f4f4;"
+            fx:controller="managerControllers.AddMaintenanceScheduleController">
+
+    <!-- Menu Bar Section -->
+    <top>
+         <MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>   
+            <Menu text="MainPage">
+               <items>
+                  <MenuItem fx:id="menuItemGoToMainPage" text="Go to Main Page" />
+                  <MenuItem fx:id="menuItemGoToManagerHomeScreen"  text="Go to Manager Home Screen" />
+               </items>
+            </Menu>
+            <Menu text="Manager">
+               <items>
+                  <MenuItem fx:id="menuItemAddNewFlight" text="Add New Flight" />
+                  <MenuItem fx:id="menuItemUpdateFlightSchedule" text="Update Flight Schedule" />
+                  <MenuItem fx:id="menuItemCancelFlight" text="Cancel Flight" />
+                  <MenuItem fx:id="menuItemViewPassengerList" text="View Passenger List" />
+                  <MenuItem fx:id="menuItemAddPassenger" text="Add Passenger" />
+                  <MenuItem fx:id="menuItemRemovePassenger" text="Remove Passenger" />
+                  <MenuItem fx:id="menuItemViewEmployeeList" text="View Crew Members" />
+                  <MenuItem fx:id="menuItemAddEmployee" text="Add Crew Member" />
+                  <MenuItem fx:id="menuItemRemoveEmployee" text="Remove Crew Member" />
+                  <MenuItem fx:id="menuItemManageCrewSchedules" text="Manage Crew Schedules" />
+                  <MenuItem fx:id="menuItemSearchReservation" text="Search Reservation" />
+                  <MenuItem fx:id="menuItemModifyReservationDetails" text="Modify Reservation Details" />
+                  <MenuItem fx:id="menuItemAccessInFlightServices" text="Access In-flight Services" />
+                  <MenuItem fx:id="menuItemAddMaintenanceSchedule" text="Add Maintenance Schedule" />
+                  <MenuItem fx:id="menuItemUpdateBaggageLimit" text="Update Baggage Limit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+    </top>
+
+    <!-- Content Section -->
+    <center>
+        <GridPane alignment="CENTER" hgap="10" vgap="10">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="468.0" style="-fx-font-weight: bold; -fx-font-size: 24px;" text="Aircraft Management" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                <font>
+                    <Font size="20" />
+                </font>
+            </Label>
+
+            <Label text="Aircraft ID:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="aircraftIdField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Button onAction="#handleCheckAvailability" style="-fx-background-color: #612D08; -fx-text-fill: white;" text="Check Availability" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Label fx:id="confirmationLabel" textFill="GREEN" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+
+            <Separator GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+
+            <Label alignment="CENTER" text="Create Schedule" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+
+            <Label text="Aircraft ID:" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="scheduleAircraftIdField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+            <Label text="Maintenance Type:" GridPane.columnIndex="0" GridPane.rowIndex="7">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="maintenanceTypeField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+            <Label text="Schedule Date:" GridPane.columnIndex="0" GridPane.rowIndex="8">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <DatePicker fx:id="scheduleDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+            <Button fx:id="createScheduleButton" onAction="#handleCreateSchedule" style="-fx-background-color: #612D08; -fx-text-fill: white;" text="Create Schedule" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Button fx:id="impromptuMaintenanceButton" onAction="#handleImpromptuSchedulee" style="-fx-background-color: #612D08; -fx-text-fill: white;" text="Impromptu Maintenance" GridPane.columnIndex="0" GridPane.rowIndex="10">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Label fx:id="scheduleConfirmationLabel" textFill="GREEN" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                </rowConstraints>
+        </GridPane>
+    </center>
+</BorderPane>
+               

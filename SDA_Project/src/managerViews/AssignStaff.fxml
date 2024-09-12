@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="rootPane" prefHeight="500" prefWidth="800" style="-fx-background-color: #f4f4f4;"
+            fx:controller="managerControllers.AssignStaffController">
+
+    <!-- Menu Bar Section -->
+    <top>
+         <MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>   
+            <Menu text="MainPage">
+               <items>
+                  <MenuItem fx:id="menuItemGoToMainPage" text="Go to Main Page" />
+                  <MenuItem fx:id="menuItemGoToManagerHomeScreen"  text="Go to Manager Home Screen" />
+               </items>
+            </Menu>
+            <Menu text="Manager">
+               <items>
+                  <MenuItem fx:id="menuItemAddNewFlight" text="Add New Flight" />
+                  <MenuItem fx:id="menuItemUpdateFlightSchedule" text="Update Flight Schedule" />
+                  <MenuItem fx:id="menuItemCancelFlight" text="Cancel Flight" />
+                  <MenuItem fx:id="menuItemViewPassengerList" text="View Passenger List" />
+                  <MenuItem fx:id="menuItemAddPassenger" text="Add Passenger" />
+                  <MenuItem fx:id="menuItemRemovePassenger" text="Remove Passenger" />
+                  <MenuItem fx:id="menuItemViewEmployeeList" text="View Crew Members" />
+                  <MenuItem fx:id="menuItemAddEmployee" text="Add Crew Member" />
+                  <MenuItem fx:id="menuItemRemoveEmployee" text="Remove Crew Member" />
+                  <MenuItem fx:id="menuItemManageCrewSchedules" text="Manage Crew Schedules" />
+                  <MenuItem fx:id="menuItemSearchReservation" text="Search Reservation" />
+                  <MenuItem fx:id="menuItemModifyReservationDetails" text="Modify Reservation Details" />
+                  <MenuItem fx:id="menuItemAccessInFlightServices" text="Access In-flight Services" />
+                  <MenuItem fx:id="menuItemAddMaintenanceSchedule" text="Add Maintenance Schedule" />
+                  <MenuItem fx:id="menuItemUpdateBaggageLimit" text="Update Baggage Limit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+    </top>
+
+    <!-- Main Content -->
+    <center>
+        <GridPane alignment="CENTER" hgap="10" prefHeight="500" prefWidth="800" style="-fx-background-color: #f4f4f4;" vgap="10"
+                  >
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="488.0" style="-fx-font-weight: bold; -fx-font-size: 24px;" text="Assign Staff" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+                <font>
+                    <Font size="20" />
+                </font>
+            </Label>
+
+            <Label text="Enter Maintenance ID:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="maintenanceIdField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Enter Staff ID:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="staffIdField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Button onAction="#handleCheckAvailability" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: #612D08; -fx-text-fill: white;" text="Check Availability" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Label text="Staff Expertise:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <Label fx:id="staffExpertiseLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <Button onAction="#handleAssignStaff" prefHeight="28.0" prefWidth="150.0" style="-fx-background-color: #612D08; -fx-text-fill: white;" text="Assign Staff" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Label fx:id="notificationLabel" textFill="GREEN" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </center>
+</BorderPane>

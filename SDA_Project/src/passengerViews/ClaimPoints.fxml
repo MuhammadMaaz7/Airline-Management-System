@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" prefHeight="500.0" prefWidth="800" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="passengerControllers.ClaimPointsController">
+    <top>
+        <VBox prefHeight="196.0" prefWidth="800.0" spacing="10">
+            <MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>   
+            <Menu text="MainPage">
+               <items>
+                  <MenuItem fx:id="menuItemGoToMainPage" text="Go to Main Page" />
+                  <MenuItem fx:id="menuItemGoToPassengerHomeScreen" text="Go To Passenger Home Screen" />
+               </items>
+            </Menu>
+            <Menu text="Passenger">
+               <items>
+                  <MenuItem fx:id="menuItemAddNewFlight" text="Book Ticket" />
+                  <MenuItem fx:id="menuItemUpdateFlightSchedule" text="Check-In" />
+                  <MenuItem fx:id="menuItemCancelFlight" text="Claim Points" />
+                  <MenuItem fx:id="menuItemViewPassengerList" text="Redeem Points" />
+                  <MenuItem fx:id="menuItemViewPassengerList1" text="Flight History" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+            <Label alignment="CENTER" prefHeight="37.0" prefWidth="800.0" text="CLAIM POINTS">
+                <font>
+                    <Font name="Arial Bold" size="20.0" />
+                </font>
+            </Label>
+            <HBox alignment="TOP_CENTER" prefHeight="3.0" prefWidth="800.0" />
+        </VBox>
+    </top>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Enter Booking PNR :      ">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="enterbookingPNRTextField" />
+               </children>
+            </HBox>
+            <Button fx:id="ClaimPointsButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="Claim" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

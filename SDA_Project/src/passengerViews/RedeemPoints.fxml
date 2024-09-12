@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" prefHeight="500.0" prefWidth="800" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller = "passengerControllers.RedeemPointsController">
+    <top>
+        <VBox prefHeight="85.0" prefWidth="800.0" spacing="10">
+            <MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>   
+            <Menu text="MainPage">
+               <items>
+                  <MenuItem fx:id="menuItemGoToMainPage" text="Go to Main Page" />
+                  <MenuItem fx:id="menuItemGoToPassengerHomeScreen" text="Go To Passenger Home Screen" />
+               </items>
+            </Menu>
+            <Menu text="Passenger">
+               <items>
+                  <MenuItem fx:id="menuItemAddNewFlight" text="Book Ticket" />
+                  <MenuItem fx:id="menuItemUpdateFlightSchedule" text="Check-In" />
+                  <MenuItem fx:id="menuItemCancelFlight" text="Claim Points" />
+                  <MenuItem fx:id="menuItemViewPassengerList" text="Redeem Points" />
+                  <MenuItem fx:id="menuItemViewPassengerList1" text="Flight History" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+            <!-- Label for Redeem Points -->
+            <Label alignment="CENTER" prefHeight="37.0" prefWidth="800.0" text="REDEEM POINTS">
+                <font>
+                    <Font name="Arial Bold" size="20.0" />
+                </font>
+            </Label>
+            <!-- HBox for Redeem Points Options -->
+            <HBox alignment="TOP_CENTER" prefHeight="3.0" prefWidth="800.0" />
+            <!-- Add more options for redeeming points such as Lounge Access, etc. -->
+        </VBox>
+    </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="upgradeOptionsTable" prefHeight="362.0" prefWidth="800.0">
+              <columns>
+                <TableColumn fx:id="optionColumn" prefWidth="399.20001220703125" text="Upgrade Option" />
+                <TableColumn fx:id="pointsRequiredColumn" minWidth="0.0" prefWidth="400.0" text="Points Required" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="57.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="upgradeButton" mnemonicParsing="false" text="Upgrade" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

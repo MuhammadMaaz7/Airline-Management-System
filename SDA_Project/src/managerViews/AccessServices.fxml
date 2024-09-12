@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/21" prefHeight="500" prefWidth="800" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managerControllers.AccessServicesController">
+    <!-- Menu Bar at the Top -->
+    <top>
+        <VBox>
+           <MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>   
+            <Menu text="MainPage">
+               <items>
+                  <MenuItem fx:id="menuItemGoToMainPage" text="Go to Main Page" />
+                  <MenuItem fx:id="menuItemGoToManagerHomeScreen"  text="Go to Manager Home Screen" />
+               </items>
+            </Menu>
+            <Menu text="Manager">
+               <items>
+                  <MenuItem fx:id="menuItemAddNewFlight" text="Add New Flight" />
+                  <MenuItem fx:id="menuItemUpdateFlightSchedule" text="Update Flight Schedule" />
+                  <MenuItem fx:id="menuItemCancelFlight" text="Cancel Flight" />
+                  <MenuItem fx:id="menuItemViewPassengerList" text="View Passenger List" />
+                  <MenuItem fx:id="menuItemAddPassenger" text="Add Passenger" />
+                  <MenuItem fx:id="menuItemRemovePassenger" text="Remove Passenger" />
+                  <MenuItem fx:id="menuItemViewEmployeeList" text="View Crew Members" />
+                  <MenuItem fx:id="menuItemAddEmployee" text="Add Crew Member" />
+                  <MenuItem fx:id="menuItemRemoveEmployee" text="Remove Crew Member" />
+                  <MenuItem fx:id="menuItemManageCrewSchedules" text="Manage Crew Schedules" />
+                  <MenuItem fx:id="menuItemSearchReservation" text="Search Reservation" />
+                  <MenuItem fx:id="menuItemModifyReservationDetails" text="Modify Reservation Details" />
+                  <MenuItem fx:id="menuItemAccessInFlightServices" text="Access In-flight Services" />
+                  <MenuItem fx:id="menuItemAddMaintenanceSchedule" text="Add Maintenance Schedule" />
+                  <MenuItem fx:id="menuItemUpdateBaggageLimit" text="Update Baggage Limit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+            <Label alignment="CENTER" prefHeight="27.0" prefWidth="677.0" style="-fx-text-fill: #333333; -fx-font-size: 24px; -fx-font-family: 'Arial'; -fx-font-weight: bold;" text="In-Flight Services">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Label>
+        </VBox>
+    </top>
+
+    <!-- Main Content in the Center -->
+    <center>
+        <GridPane alignment="CENTER" hgap="10"  style="-fx-background-color: #f4f4f4;" vgap="10">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+
+            <!-- Menu Section -->
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="320.0" style="-fx-font-weight: bold;" text="Menu" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <ListView fx:id="menuListView" prefHeight="178.0" prefWidth="574.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <effect>
+                    <DropShadow>
+                        <input>
+                            <Blend />
+                        </input>
+                    </DropShadow>
+                </effect>
+            </ListView>
+
+            <!-- Entertainment Content Section -->
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="320.0" style="-fx-font-weight: bold;" text="Entertainment" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <ListView fx:id="entertainmentListView" prefHeight="181.0" prefWidth="574.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <effect>
+                    <DropShadow>
+                        <input>
+                            <Blend />
+                        </input>
+                    </DropShadow>
+                </effect>
+            </ListView>
+
+            <!-- Search and Modify Section -->
+            <Label alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="270.0" style="-fx-font-weight: bold;" text="Search and Modify:" GridPane.rowIndex="9">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+
+            <!-- Menu Button -->
+            <Button fx:id="menuButton" alignment="CENTER" onAction="#handleMenu" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #612D08; -fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-padding: 8px 20px; -fx-cursor: hand;" text="Menu" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+
+            <!-- Entertainment Button -->
+            <Button fx:id="entertainmentButton" alignment="CENTER" onAction="#handleEntertainment" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #612D08; -fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-padding: 8px 20px; -fx-cursor: hand;" text="Entertainment" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+
+            <!-- Special Dietary Requirements Button -->
+            <Button fx:id="specialDietaryRequirementsButton" alignment="CENTER" onAction="#handleSpecialMeal" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #612D08; -fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-padding: 8px 20px; -fx-cursor: hand;" text="Special Dietary Requirements" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="170.0" style="-fx-font-weight: bold;" text="Menu:" textAlignment="RIGHT" GridPane.rowIndex="2">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="27.0" prefWidth="270.0" style="-fx-font-weight: bold;" text="Entertainment:" GridPane.rowIndex="3">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </center>
+</BorderPane>

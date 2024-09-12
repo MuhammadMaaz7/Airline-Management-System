@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="rootPane" prefHeight="500" prefWidth="800" style="-fx-background-color: #f4f4f4;"
+            fx:controller="managerControllers.ModifyReservationController">
+
+    <!-- Menu Bar Section -->
+    <top>
+        <MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>   
+            <Menu text="MainPage">
+               <items>
+                  <MenuItem fx:id="menuItemGoToMainPage" text="Go to Main Page" />
+                  <MenuItem fx:id="menuItemGoToManagerHomeScreen"  text="Go to Manager Home Screen" />
+               </items>
+            </Menu>
+            <Menu text="Manager">
+               <items>
+                  <MenuItem fx:id="menuItemAddNewFlight" text="Add New Flight" />
+                  <MenuItem fx:id="menuItemUpdateFlightSchedule" text="Update Flight Schedule" />
+                  <MenuItem fx:id="menuItemCancelFlight" text="Cancel Flight" />
+                  <MenuItem fx:id="menuItemViewPassengerList" text="View Passenger List" />
+                  <MenuItem fx:id="menuItemAddPassenger" text="Add Passenger" />
+                  <MenuItem fx:id="menuItemRemovePassenger" text="Remove Passenger" />
+                  <MenuItem fx:id="menuItemViewEmployeeList" text="View Crew Members" />
+                  <MenuItem fx:id="menuItemAddEmployee" text="Add Crew Member" />
+                  <MenuItem fx:id="menuItemRemoveEmployee" text="Remove Crew Member" />
+                  <MenuItem fx:id="menuItemManageCrewSchedules" text="Manage Crew Schedules" />
+                  <MenuItem fx:id="menuItemSearchReservation" text="Search Reservation" />
+                  <MenuItem fx:id="menuItemModifyReservationDetails" text="Modify Reservation Details" />
+                  <MenuItem fx:id="menuItemAccessInFlightServices" text="Access In-flight Services" />
+                  <MenuItem fx:id="menuItemAddMaintenanceSchedule" text="Add Maintenance Schedule" />
+                  <MenuItem fx:id="menuItemUpdateBaggageLimit" text="Update Baggage Limit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+    </top>
+
+    <!-- Content Section -->
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Modify Reservation" />
+            <TextField fx:id="bookingIdTextField" promptText="Enter Booking ID" style="-fx-pref-width: 200px; -fx-font-size: 14px; -fx-padding: 5px;">
+                <VBox.margin>
+                    <Insets left="50.0" right="50.0" />
+                </VBox.margin>
+            </TextField>
+            <Button onAction="#searchReservationn" style="-fx-font-size: 14px; -fx-padding: 8px 20px; -fx-background-color: #612D08; -fx-text-fill: white; -fx-cursor: hand;" text="Search" />
+        </VBox>
+    </center>
+</BorderPane>

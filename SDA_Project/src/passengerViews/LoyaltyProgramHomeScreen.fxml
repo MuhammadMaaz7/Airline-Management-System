@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" prefHeight="500.0" prefWidth="800" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="passengerControllers.HomeScreenController">
+    <top>
+        <VBox prefHeight="138.0" prefWidth="800.0" spacing="10">
+          <MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>   
+            <Menu text="MainPage">
+               <items>
+                  <MenuItem fx:id="menuItemGoToMainPage" text="Go to Main Page" />
+                  <MenuItem fx:id="menuItemGoToPassengerHomeScreen" text="Go To Passenger Home Screen" />
+               </items>
+            </Menu>
+            <Menu text="Passenger">
+               <items>
+                  <MenuItem fx:id="menuItemAddNewFlight" text="Book Ticket" />
+                  <MenuItem fx:id="menuItemUpdateFlightSchedule" text="Check-In" />
+                  <MenuItem fx:id="menuItemCancelFlight" text="Claim Points" />
+                  <MenuItem fx:id="menuItemViewPassengerList" text="Redeem Points" />
+                  <MenuItem fx:id="menuItemViewPassengerList1" text="Flight History" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+         <HBox alignment="TOP_CENTER" prefHeight="3.0" prefWidth="800.0">
+            <children>
+               <Label text="Name :       ">
+                  <font>
+                     <Font name="Arial Bold" size="14.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="nameTextField" />
+            </children>
+         </HBox>
+         <HBox alignment="TOP_CENTER" prefHeight="10.0" prefWidth="800.0">
+            <children>
+               <Label prefHeight="16.0" prefWidth="124.0" text="Membership ID:">
+                  <font>
+                     <Font name="Arial Bold" size="14.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="membershipIdTextField" />
+            </children>
+         </HBox>
+         <Label alignment="CENTER" prefHeight="0.0" prefWidth="800.0" text="Flight History">
+            <font>
+               <Font name="Arial Bold" size="18.0" />
+            </font>
+         </Label>
+        </VBox>
+    </top>
+   <bottom>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="166.0" prefWidth="800.0">
+               <children>
+                  <VBox prefHeight="178.0" prefWidth="70.0" />
+                  <VBox alignment="CENTER" prefHeight="466.0" prefWidth="266.0">
+                     <children>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#6bb1f266" height="178.0" stroke="TRANSPARENT" strokeType="INSIDE" width="178.0" />
+                              <VBox alignment="CENTER" prefHeight="146.0" prefWidth="212.0">
+                                 <children>
+                                    <Label text="Flights Booked :">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="flightsbooked" alignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="178.0" prefWidth="405.0">
+                     <children>
+                        <StackPane prefHeight="178.0" prefWidth="314.0">
+                           <children>
+                              <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#6bb1f266" height="178.0" stroke="TRANSPARENT" strokeType="INSIDE" width="178.0" />
+                              <VBox alignment="CENTER" prefHeight="97.0" prefWidth="306.0">
+                                 <children>
+                                    <Label text="Miles Travelled :">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="322.0">
+                                       <children>
+                                          <TextField fx:id="milesTravelledTextField" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="466.0" prefWidth="260.0">
+                     <children>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#6bb1f266" height="178.0" stroke="TRANSPARENT" strokeType="INSIDE" width="178.0" />
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Label text="Points Earned :">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="pointsEarnedTextField" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER" prefHeight="160.0" prefWidth="157.0" />
+                           </children>
+                        </StackPane>
+                        <HBox prefHeight="45.0" prefWidth="266.0" />
+                        <StackPane prefHeight="150.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="178.0" prefWidth="70.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="27.0" prefWidth="800.0" />
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="800.0">
+               <children>
+                  <VBox prefHeight="26.0" prefWidth="200.0" />
+                  <VBox alignment="CENTER" prefHeight="26.0" prefWidth="200.0" />
+                  <VBox alignment="CENTER" prefHeight="26.0" prefWidth="200.0" />
+                  <VBox alignment="CENTER" prefHeight="26.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="flightTableView" prefHeight="158.0" prefWidth="800.0">
+              <columns>
+                <TableColumn fx:id="flightNumberColumn" prefWidth="170.40002363920212" text="Flight Number" />
+                <TableColumn fx:id="seatColumn" minWidth="5.600006103515625" prefWidth="194.39996337890625" text="Seat Number" />
+                  <TableColumn fx:id="dateColumn" prefWidth="201.60003662109375" text="Booking Date" />
+                  <TableColumn fx:id="bookingReferenceColumn" prefWidth="231.20001220703125" text="Booking Reference" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

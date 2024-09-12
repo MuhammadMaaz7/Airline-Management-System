@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane"  prefHeight="500" prefWidth="800" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managerControllers.ManageCrewSchedulesController">
+
+    <top>
+        <VBox>
+            <MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>   
+            <Menu text="MainPage">
+               <items>
+                  <MenuItem fx:id="menuItemGoToMainPage" text="Go to Main Page" />
+                  <MenuItem fx:id="menuItemGoToManagerHomeScreen" text="Go to Manager Home Screen" />
+               </items>
+            </Menu>
+            <Menu text="Manager">
+               <items>
+                  <MenuItem fx:id="menuItemAddNewFlight" text="Add New Flight" />
+                  <MenuItem fx:id="menuItemUpdateFlightSchedule" text="Update Flight Schedule" />
+                  <MenuItem fx:id="menuItemCancelFlight" text="Cancel Flight" />
+                  <MenuItem fx:id="menuItemViewPassengerList" text="View Passenger List" />
+                  <MenuItem fx:id="menuItemAddPassenger" text="Add Passenger" />
+                  <MenuItem fx:id="menuItemRemovePassenger" text="Remove Passenger" />
+                  <MenuItem fx:id="menuItemViewEmployeeList" text="View Crew Members" />
+                  <MenuItem fx:id="menuItemAddEmployee" text="Add Crew Member" />
+                  <MenuItem fx:id="menuItemRemoveEmployee" text="Remove Crew Member" />
+                  <MenuItem fx:id="menuItemManageCrewSchedules" text="Manage Crew Schedules" />
+                  <MenuItem fx:id="menuItemSearchReservation" text="Search Reservation" />
+                  <MenuItem fx:id="menuItemModifyReservationDetails" text="Modify Reservation Details" />
+                  <MenuItem fx:id="menuItemAccessInFlightServices" text="Access In-flight Services" />
+                  <MenuItem fx:id="menuItemAddMaintenanceSchedule" text="Add Maintenance Schedule" />
+                  <MenuItem fx:id="menuItemUpdateBaggageLimit" text="Update Baggage Limit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+         <Label alignment="CENTER" prefHeight="37.0" prefWidth="800.0" text="CREW SCHEDULES">
+            <font>
+               <Font name="Arial Bold" size="20.0" />
+            </font>
+         </Label>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10">
+         <TableView fx:id="crewTableView" prefWidth="600">
+    <columns>
+        <TableColumn fx:id="nameColumn" prefWidth="168.0" text="Name">
+            <cellValueFactory>
+                <PropertyValueFactory property="crewMemberName" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="roleColumn" prefWidth="108.8" text="Role">
+            <cellValueFactory>
+                <PropertyValueFactory property="role" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="flightNumberColumn" prefWidth="119.2" text="Flight Number" />
+        <TableColumn fx:id="compartmentColumn" prefWidth="143.2" text="Compartment" />
+        <TableColumn fx:id="dateColumn" prefWidth="122.4" text="Date" />
+        <TableColumn fx:id="statusColumn" prefWidth="134.4" text="Status" />
+    </columns>
+</TableView>
+        </VBox>
+    </center>
+   <bottom>
+         <Button fx:id="addScheduleButton" alignment="CENTER" contentDisplay="CENTER" onAction="#addNewCrewSchedule" prefHeight="21.0" prefWidth="103.0" text="Add Schedule" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

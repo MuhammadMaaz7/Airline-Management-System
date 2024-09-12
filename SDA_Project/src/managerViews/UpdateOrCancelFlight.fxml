@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" prefHeight="500" prefWidth="800" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="managerControllers.UpdateOrCancelController">
+
+	<top>
+		<VBox>
+			<MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>   
+            <Menu text="MainPage">
+               <items>
+                  <MenuItem fx:id="menuItemGoToMainPage" text="Go to Main Page" />
+                  <MenuItem fx:id="menuItemGoToManagerHomeScreen" text="Go to Manager Home Screen" />
+               </items>
+            </Menu>
+            <Menu text="Manager">
+               <items>
+                  <MenuItem fx:id="menuItemAddNewFlight" text="Add New Flight" />
+                  <MenuItem fx:id="menuItemUpdateFlightSchedule" text="Update Flight Schedule" />
+                  <MenuItem fx:id="menuItemCancelFlight" text="Cancel Flight" />
+                  <MenuItem fx:id="menuItemViewPassengerList" text="View Passenger List" />
+                  <MenuItem fx:id="menuItemAddPassenger" text="Add Passenger" />
+                  <MenuItem fx:id="menuItemRemovePassenger" text="Remove Passenger" />
+                  <MenuItem fx:id="menuItemViewEmployeeList" text="View Crew Members" />
+                  <MenuItem fx:id="menuItemAddEmployee" text="Add Crew Member" />
+                  <MenuItem fx:id="menuItemRemoveEmployee" text="Remove Crew Member" />
+                  <MenuItem fx:id="menuItemManageCrewSchedules" text="Manage Crew Schedules" />
+                  <MenuItem fx:id="menuItemSearchReservation" text="Search Reservation" />
+                  <MenuItem fx:id="menuItemModifyReservationDetails" text="Modify Reservation Details" />
+                  <MenuItem fx:id="menuItemAccessInFlightServices" text="Access In-flight Services" />
+                  <MenuItem fx:id="menuItemAddMaintenanceSchedule" text="Add Maintenance Schedule" />
+                  <MenuItem fx:id="menuItemUpdateBaggageLimit" text="Update Baggage Limit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+
+			<Label alignment="CENTER" prefHeight="37.0" prefWidth="800.0" text="FLIGHT SCHEDULES">
+				<font>
+					<Font name="Arial Bold" size="20.0" />
+				</font>
+			</Label>
+         <Label alignment="CENTER" prefHeight="37.0" prefWidth="800.0" text="Select Flight to Update or Cancel ">
+            <font>
+               <Font name="Arial" size="18.0" />
+            </font>
+         </Label>
+		</VBox>
+	</top>
+
+	<center>
+		<VBox alignment="CENTER" spacing="10">
+			<TableView fx:id="flightScheduleTableView" prefWidth="600">
+				<columns>
+               <TableColumn fx:id="flightNumberColumn" prefWidth="95.0" text="Flight Number">
+                 <cellValueFactory>
+                <PropertyValueFactory property="flightNumber" />
+            </cellValueFactory>
+            </TableColumn>
+					<TableColumn fx:id="departureAirportIdColumn" prefWidth="105.0" text="Departure City">
+						<cellValueFactory>
+							<PropertyValueFactory property="departureCity" />
+						</cellValueFactory>
+					</TableColumn>
+					<TableColumn fx:id="arrivalAirportIdColumn" prefWidth="105.0" text="Arrival City">
+						<cellValueFactory>
+							<PropertyValueFactory property="arrivalCity" />
+						</cellValueFactory>
+					</TableColumn>
+					<TableColumn fx:id="departureDateColumn" prefWidth="105.0" text="Departure Date">
+						<cellValueFactory>
+							<PropertyValueFactory property="departureDate" />
+						</cellValueFactory>
+					</TableColumn>
+					<TableColumn fx:id="arrivalDateColumn" prefWidth="105.0" text="Arrival Date">
+						<cellValueFactory>
+							<PropertyValueFactory property="arrivalDate" />
+						</cellValueFactory>
+					</TableColumn>
+					<TableColumn fx:id="departureTimeColumn" prefWidth="105.0" text="Departure Time">
+						<cellValueFactory>
+							<PropertyValueFactory property="departureTime" />
+						</cellValueFactory>
+					</TableColumn>
+					<TableColumn fx:id="arrivalTimeColumn" prefWidth="105.0" text="Arrival Time">
+						<cellValueFactory>
+							<PropertyValueFactory property="arrivalTime" />
+						</cellValueFactory>
+					</TableColumn>
+					<TableColumn fx:id="statusColumn" prefWidth="68.800048828125" text="Status">
+						<cellValueFactory>
+							<PropertyValueFactory property="status" />
+						</cellValueFactory>
+					</TableColumn>
+				</columns>
+			</TableView>
+		</VBox>
+	</center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="42.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+      		<Button fx:id="UpdateFlight" alignment="CENTER" contentDisplay="CENTER"  prefHeight="35.0" prefWidth="125.0" text="Update Schedule" />
+            <Label prefHeight="18.0" prefWidth="78.0" />
+            <Button fx:id="CancelFlightButton" alignment="CENTER" contentDisplay="CENTER"  prefHeight="35.0" prefWidth="125.0" text="Cancel Flight" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

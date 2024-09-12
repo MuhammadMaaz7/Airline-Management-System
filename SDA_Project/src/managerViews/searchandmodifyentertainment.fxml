@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/21" prefHeight="500" prefWidth="800" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managerControllers.searchandmodifyentertainmentController">
+    <!-- Menu Bar at the Top -->
+    <top>
+        <VBox>
+            <MenuBar layoutX="0.0" layoutY="0.0">
+         <menus>   
+            <Menu text="MainPage">
+               <items>
+                  <MenuItem fx:id="menuItemGoToMainPage" text="Go to Main Page" />
+                   <MenuItem fx:id="menuItemGoToManagerHomeScreen"  text="Go to Manager Home Screen" />
+               </items>
+            </Menu>
+            <Menu text="Manager">
+               <items>
+                  <MenuItem fx:id="menuItemAddNewFlight" text="Add New Flight" />
+                  <MenuItem fx:id="menuItemUpdateFlightSchedule" text="Update Flight Schedule" />
+                  <MenuItem fx:id="menuItemCancelFlight" text="Cancel Flight" />
+                  <MenuItem fx:id="menuItemViewPassengerList" text="View Passenger List" />
+                  <MenuItem fx:id="menuItemAddPassenger" text="Add Passenger" />
+                  <MenuItem fx:id="menuItemRemovePassenger" text="Remove Passenger" />
+                  <MenuItem fx:id="menuItemViewEmployeeList" text="View Crew Members" />
+                  <MenuItem fx:id="menuItemAddEmployee" text="Add Crew Member" />
+                  <MenuItem fx:id="menuItemRemoveEmployee" text="Remove Crew Member" />
+                  <MenuItem fx:id="menuItemManageCrewSchedules" text="Manage Crew Schedules" />
+                  <MenuItem fx:id="menuItemSearchReservation" text="Search Reservation" />
+                  <MenuItem fx:id="menuItemModifyReservationDetails" text="Modify Reservation Details" />
+                  <MenuItem fx:id="menuItemAccessInFlightServices" text="Access In-flight Services" />
+                  <MenuItem fx:id="menuItemAddMaintenanceSchedule" text="Add Maintenance Schedule" />
+                  <MenuItem fx:id="menuItemUpdateBaggageLimit" text="Update Baggage Limit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+            <Label alignment="CENTER" prefHeight="35.0" prefWidth="823.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Search and Modify Entertainment Content">
+                <font>
+                    <Font size="20" />
+                </font>
+            </Label>
+        </VBox>
+    </top>
+
+    <!-- Main Content in the Center -->
+    <center>
+        <GridPane alignment="CENTER" hgap="10"  style="-fx-background-color: #f4f4f4;" vgap="10">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+
+            <Label text="Enter Content ID:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="contentIdField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Title:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <Label fx:id="titleLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Genre:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <Label fx:id="genreLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Duration:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <Label fx:id="durationLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <Label text="Rating:" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <Label fx:id="ratingLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+            <Button fx:id="searchbutton" onAction="#handleSearchContent" style="-fx-background-color: #612D08; -fx-text-fill: white;" text="Search" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <Label text="Operation:" GridPane.columnIndex="0" GridPane.rowIndex="7">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <ComboBox fx:id="operationComboBox" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+            <!-- Add Content Fields -->
+            <Label text="New Title:" GridPane.columnIndex="0" GridPane.rowIndex="8">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="newTitleField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+            <Label text="New Genre:" GridPane.columnIndex="0" GridPane.rowIndex="9">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="newGenreField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+
+            <Label text="New Duration:" GridPane.columnIndex="0" GridPane.rowIndex="10">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="newDurationField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+
+            <Label text="New Rating:" GridPane.columnIndex="0" GridPane.rowIndex="11">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <TextField fx:id="newRatingField" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+
+            <Button onAction="#handleModifyContent" style="-fx-background-color: #612D08; -fx-text-fill: white;" text="Modify" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </center>
+</BorderPane>

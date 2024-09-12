@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #A9CBD9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="passengerControllers.bookedTicketController">
+    <children>
+        <Label layoutX="274.0" layoutY="31.0" text="Ticket Confirmation" textAlignment="CENTER">
+            <font>
+                <Font name="Trebuchet MS" size="30.0" />
+            </font>
+        </Label>
+        <Label layoutX="255.0" layoutY="120.0" text="Passenger Name: " textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <Label layoutX="315.0" layoutY="163.0" text="To" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <Label layoutX="304.0" layoutY="203.0" text="From" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <Button fx:id="searchButton" layoutX="339.0" layoutY="412.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="118.0" text="OK">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Label layoutX="285.0" layoutY="247.0" text="Departure" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="290.0" layoutY="333.0" text="Payment" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="passengerNameLabel" layoutX="430.0" layoutY="123.0" text="Name ">
+         <font>
+            <Font name="Trebuchet MS" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="toLabel" layoutX="442.0" layoutY="166.0" text="to">
+         <font>
+            <Font name="Trebuchet MS" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="fromLabel" layoutX="431.0" layoutY="206.0" text="from">
+         <font>
+            <Font name="Trebuchet MS" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="departureLabel" layoutX="435.0" layoutY="250.0" text="dep">
+         <font>
+            <Font name="Trebuchet MS" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="paymentLabel" layoutX="425.0" layoutY="336.0" text="payment">
+         <font>
+            <Font name="Trebuchet MS" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="299.0" layoutY="288.0" text="Arrival" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="arrivalLabel" layoutX="436.0" layoutY="291.0" text="arri">
+         <font>
+            <Font name="Trebuchet MS" size="18.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
